@@ -56,29 +56,33 @@
             this.btn_VerClientes = new System.Windows.Forms.Button();
             this.label_gestor = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtbox_precioactualizado = new System.Windows.Forms.TextBox();
+            this.txtbox_Empleado = new System.Windows.Forms.TextBox();
+            this.txtbox_Cliente = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // lb_Productos
             // 
+            this.lb_Productos.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_Productos.FormattingEnabled = true;
-            this.lb_Productos.Location = new System.Drawing.Point(796, 96);
+            this.lb_Productos.ItemHeight = 15;
+            this.lb_Productos.Location = new System.Drawing.Point(715, 96);
             this.lb_Productos.Name = "lb_Productos";
             this.lb_Productos.ScrollAlwaysVisible = true;
-            this.lb_Productos.Size = new System.Drawing.Size(292, 433);
+            this.lb_Productos.Size = new System.Drawing.Size(373, 424);
             this.lb_Productos.TabIndex = 2;
             this.lb_Productos.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lb_Productos_MouseDown);
             // 
             // lb_Compra
             // 
             this.lb_Compra.AllowDrop = true;
+            this.lb_Compra.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_Compra.FormattingEnabled = true;
+            this.lb_Compra.ItemHeight = 19;
             this.lb_Compra.Location = new System.Drawing.Point(1124, 96);
             this.lb_Compra.Name = "lb_Compra";
             this.lb_Compra.ScrollAlwaysVisible = true;
-            this.lb_Compra.Size = new System.Drawing.Size(274, 433);
+            this.lb_Compra.Size = new System.Drawing.Size(274, 422);
             this.lb_Compra.TabIndex = 3;
             this.lb_Compra.DragDrop += new System.Windows.Forms.DragEventHandler(this.lb_Compra_DragDrop);
             this.lb_Compra.DragEnter += new System.Windows.Forms.DragEventHandler(this.lb_Compra_DragEnter);
@@ -156,13 +160,14 @@
             // 
             // listBox_Empleados
             // 
-            this.listBox_Empleados.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listBox_Empleados.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBox_Empleados.FormattingEnabled = true;
             this.listBox_Empleados.ItemHeight = 18;
             this.listBox_Empleados.Location = new System.Drawing.Point(262, 122);
             this.listBox_Empleados.Name = "listBox_Empleados";
             this.listBox_Empleados.Size = new System.Drawing.Size(412, 40);
             this.listBox_Empleados.TabIndex = 80;
+            this.listBox_Empleados.DoubleClick += new System.EventHandler(this.listBox_Empleados_DoubleClick);
             // 
             // btn_BuscarEmpleado
             // 
@@ -247,13 +252,14 @@
             // 
             // lstbox_Cliente
             // 
-            this.lstbox_Cliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lstbox_Cliente.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lstbox_Cliente.FormattingEnabled = true;
             this.lstbox_Cliente.ItemHeight = 18;
             this.lstbox_Cliente.Location = new System.Drawing.Point(249, 357);
             this.lstbox_Cliente.Name = "lstbox_Cliente";
             this.lstbox_Cliente.Size = new System.Drawing.Size(412, 58);
             this.lstbox_Cliente.TabIndex = 73;
+            this.lstbox_Cliente.DoubleClick += new System.EventHandler(this.lstbox_Cliente_DoubleClick);
             // 
             // btn_BuscarCliente
             // 
@@ -326,35 +332,35 @@
             this.label4.TabIndex = 86;
             this.label4.Text = "Cliente ->";
             // 
-            // textBox1
+            // txtbox_precioactualizado
             // 
-            this.textBox1.Location = new System.Drawing.Point(937, 588);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 87;
+            this.txtbox_precioactualizado.Location = new System.Drawing.Point(937, 588);
+            this.txtbox_precioactualizado.Name = "txtbox_precioactualizado";
+            this.txtbox_precioactualizado.Size = new System.Drawing.Size(100, 20);
+            this.txtbox_precioactualizado.TabIndex = 87;
             // 
-            // textBox2
+            // txtbox_Empleado
             // 
-            this.textBox2.Location = new System.Drawing.Point(1210, 51);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(188, 20);
-            this.textBox2.TabIndex = 88;
+            this.txtbox_Empleado.Location = new System.Drawing.Point(1210, 51);
+            this.txtbox_Empleado.Name = "txtbox_Empleado";
+            this.txtbox_Empleado.Size = new System.Drawing.Size(188, 20);
+            this.txtbox_Empleado.TabIndex = 88;
             // 
-            // textBox3
+            // txtbox_Cliente
             // 
-            this.textBox3.Location = new System.Drawing.Point(1210, 73);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(188, 20);
-            this.textBox3.TabIndex = 89;
+            this.txtbox_Cliente.Location = new System.Drawing.Point(1210, 73);
+            this.txtbox_Cliente.Name = "txtbox_Cliente";
+            this.txtbox_Cliente.Size = new System.Drawing.Size(188, 20);
+            this.txtbox_Cliente.TabIndex = 89;
             // 
             // Form_Compra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1487, 715);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtbox_Cliente);
+            this.Controls.Add(this.txtbox_Empleado);
+            this.Controls.Add(this.txtbox_precioactualizado);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label_gestor);
             this.Controls.Add(this.btn_VerClientes);
@@ -383,6 +389,7 @@
             this.Controls.Add(this.lb_Productos);
             this.Name = "Form_Compra";
             this.Text = "Compras";
+            this.Load += new System.EventHandler(this.Form_Compra_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -416,8 +423,8 @@
         private System.Windows.Forms.Button btn_VerClientes;
         private System.Windows.Forms.Label label_gestor;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtbox_precioactualizado;
+        private System.Windows.Forms.TextBox txtbox_Empleado;
+        private System.Windows.Forms.TextBox txtbox_Cliente;
     }
 }

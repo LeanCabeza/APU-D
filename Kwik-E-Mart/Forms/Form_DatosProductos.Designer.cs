@@ -34,16 +34,16 @@
             // lb_Productos
             // 
             this.lb_Productos.FormattingEnabled = true;
-            this.lb_Productos.Location = new System.Drawing.Point(102, 80);
+            this.lb_Productos.Location = new System.Drawing.Point(38, 24);
             this.lb_Productos.Name = "lb_Productos";
-            this.lb_Productos.Size = new System.Drawing.Size(597, 290);
+            this.lb_Productos.Size = new System.Drawing.Size(714, 290);
             this.lb_Productos.TabIndex = 1;
             // 
             // Form_DatosProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 362);
             this.Controls.Add(this.lb_Productos);
             this.Name = "Form_DatosProductos";
             this.Text = "Form_DatosProductos";

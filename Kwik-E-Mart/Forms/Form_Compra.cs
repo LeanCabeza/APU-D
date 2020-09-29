@@ -121,7 +121,7 @@ namespace Forms
 
             foreach (Producto producto in this.listaProductos)
             {
-                this.lb_Productos.Items.Add("Nombre :" + producto.NombreProducto + " Marca : " + producto.Marca + " Precio : $ " + producto.Precio + " Peso :" + producto.Peso + "grmos" + " Stock : " + producto.Stock + " IdProducto : " + producto.IdProducto);
+                this.lb_Productos.Items.Add(producto.NombreProducto + " Marca : " + producto.Marca + " Precio : $ " + producto.Precio + " Peso :" + producto.Peso + "grmos" + " Stock : " + producto.Stock + " IdProducto : " + producto.IdProducto);
             }
 
         }
@@ -228,10 +228,21 @@ namespace Forms
         #endregion
 
 
-        private void textBox2_TextChanged(object sender, EventArgs e)
+        private void listBox_Empleados_DoubleClick(object sender, EventArgs e)
         {
-            string empleadoACargo = this.listBox_Empleados.SelectedItem.ToString();
-            textBox1.Text = empleadoACargo;
+            txtbox_Empleado.Text = this.listBox_Empleados.SelectedItem.ToString();
+
         }
+
+        private void lstbox_Cliente_DoubleClick(object sender, EventArgs e)
+        {
+            txtbox_Cliente.Text = this.lstbox_Cliente.SelectedItem.ToString();
+        }
+
+        private void Form_Compra_Load(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }
