@@ -47,6 +47,7 @@
             this.Controls.Add(this.lb_Empleado);
             this.Name = "Form_DatosEmpleados";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form_DatosEmpleados_Load);
             this.ResumeLayout(false);
 
         }

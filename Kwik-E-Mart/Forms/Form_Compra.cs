@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Entidades;
 
+
 namespace Forms
 {
     public partial class Form_Compra : Form
@@ -16,104 +17,22 @@ namespace Forms
         private List<Empleado> listaEmpleados;
         private List<Cliente> listaClientes;
         private List<Producto> listaProductos;
-      
+
+        private Compra compra;
+
+        public Compra Compra
+        {
+            get { return this.compra;}
+        }
+
+
         public Form_Compra(List<Empleado> listaEmpleados, List<Cliente> listaClientes, List<Producto> listaProductos)
         {
             InitializeComponent();
             this.listaEmpleados = listaEmpleados;
             this.listaClientes = listaClientes;
             this.listaProductos = listaProductos;
-            CargarCamposProductos();
-
-        }
-
-        private void btn_BuscarEmpleado_Click(object sender, EventArgs e)
-        {
-            this.listBox_Empleados.Items.Clear();
-            bool existe = false;
-
-            bool dniOk = false;
-            int auxDni;
-
-            StringBuilder mensajeError = new StringBuilder();
-
-            if (!(int.TryParse(this.tb_dniEmpleado.Text, out auxDni)))
-            {
-                mensajeError.AppendLine("Ocurrio un error con el DNI");
-            }
-            else
-            {
-                dniOk = true;
-            }
-
-            if (dniOk)
-            {
-
-                foreach (Empleado a in this.listaEmpleados)
-                {
-                    if (auxDni == a.Dni)
-                    {
-                        this.listBox_Empleados.Items.Add((a.Nombre + " // " + a.Apellido + " // " + a.Dni + " // " + a.Cargo + " // " + a.Turno));
-                        existe = true;
-                    }
-                }
-
-                if (existe)
-                {
-                    MessageBox.Show("¡Empleado encontrados con ese dni!", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-
-                }
-                else
-                {
-                    MessageBox.Show("No existe Empleado con ese dni", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-
-            }
-            else
-            {
-                MessageBox.Show("Error , el dni debe ser en formato numeros y sin espacios", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-
-        private void btn_AltaEmpleado_Click(object sender, EventArgs e)
-        {
-            Form_altaEmpleados Form_nuevoEmpleado = new Form_altaEmpleados(this.listaEmpleados);
-            Form_nuevoEmpleado.ShowDialog();
-
-            if (Form_nuevoEmpleado.DialogResult == DialogResult.OK)
-            {
-                this.listaEmpleados.Add(Form_nuevoEmpleado.Empleado);
-                MessageBox.Show("Empleado agregado al listado con exito", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            }
-        }
-
-        private void btn_altaCliente_Click(object sender, EventArgs e)
-        {
-            Form_altaCliente Form_nuevoCliente = new Form_altaCliente(this.listaClientes);
-            Form_nuevoCliente.ShowDialog();
-
-            if (Form_nuevoCliente.DialogResult == DialogResult.OK)
-            {
-                this.listaClientes.Add(Form_nuevoCliente.Cliente);
-                MessageBox.Show("Cliente agregado al listado con exito", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            }
-        }
-
-        private void btn_AltaProducto_Click(object sender, EventArgs e)
-        {
-            Form_altoProducto Form_nuevoProducto = new Form_altoProducto(this.listaProductos);
-            Form_nuevoProducto.ShowDialog();
-
-            if (Form_nuevoProducto.DialogResult == DialogResult.OK)
-            {
-                this.listaProductos.Add(Form_nuevoProducto.Producto);
-                MessageBox.Show("Producto agregado al listado con exito", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            
-                this.lb_Productos.Items.Clear();
-                CargarCamposProductos();
-            }
-            
+      
         }
 
         private void CargarCamposProductos()
@@ -121,70 +40,17 @@ namespace Forms
 
             foreach (Producto producto in this.listaProductos)
             {
-                this.lb_Productos.Items.Add(producto.NombreProducto + " Marca : " + producto.Marca + " Precio : $ " + producto.Precio + " Peso :" + producto.Peso + "grmos" + " Stock : " + producto.Stock + " IdProducto : " + producto.IdProducto);
+                this.listbox_Productos.Items.Add(producto.NombreProducto + " Marca : " + producto.Marca + " Precio : $ " + producto.Precio + " Peso :" + producto.Peso + "grmos" + " Stock : " + producto.Stock + " IdProducto : " + producto.IdProducto);
             }
 
         }
 
-        private void btn_BuscarCliente_Click(object sender, EventArgs e)
+        private void CargarComboBox()
         {
-            this.lstbox_Cliente.Items.Clear();
-            bool existe = false;
-
-            bool dniOk = false;
-            int auxDni;
-
-            StringBuilder mensajeError = new StringBuilder();
-
-            if (!(int.TryParse(this.tb_dniCliente.Text, out auxDni)))
-            {
-                mensajeError.AppendLine("Ocurrio un error con el DNI");
-            }
-            else
-            {
-                dniOk = true;
-            }
-
-            if (dniOk)
-            {
-                foreach (Cliente a in this.listaClientes)
-                {
-                    if (auxDni == a.Dni)
-                    {
-                        this.lstbox_Cliente.Items.Add((a.Nombre + " // " + a.Apellido + " // " + a.Dni + " // " + a.CorreoElectronico + " // " + a.Domicilio + " // " + a.NroTelefono));
-                        existe = true;
-                    }
-                }
-
-                if (existe)
-                {
-                    MessageBox.Show("¡Cliente encontrados con ese dni!", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-
-                }
-                else
-                {
-                    MessageBox.Show("No existe Cliente con ese dni", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-
-            }
-            else
-            {
-                MessageBox.Show("Error , el dni debe ser en formato numeros y sin espacios", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-           
-       
-        }
-
-        private void btn_VerEmpleado_Click(object sender, EventArgs e)
-        {
-            Form_DatosEmpleados datosEmpleaedos = new Form_DatosEmpleados(this.listaEmpleados);
-            datosEmpleaedos.ShowDialog();
-        }
-
-        private void btn_VerClientes_Click(object sender, EventArgs e)
-        {
-            Form_DatosClientes datosClientes = new Form_DatosClientes(this.listaClientes);
-            datosClientes.ShowDialog();
+            this.cmb_Empleados.Enabled = true;
+            this.cmb_Clientes.Enabled = true;
+            this.cmb_Empleados.DataSource = listaEmpleados;
+            this.cmb_Clientes.DataSource = listaClientes;
         }
 
 
@@ -193,13 +59,10 @@ namespace Forms
         //Estos manejadores de eventos permiten arrastrar a los productos para agregarlos a la compra
 
         private void lb_Productos_MouseDown(object sender, MouseEventArgs e)
-        {
-
-            
-            if (!(lb_Productos.SelectedItem is null))
+        { 
+            if (!(listbox_Productos.SelectedItem is null))
             {
-              
-                this.lb_Productos.DoDragDrop(lb_Productos.SelectedItem.ToString(), DragDropEffects.Copy);
+                this.listbox_Productos.DoDragDrop(listbox_Productos.SelectedItem.ToString(), DragDropEffects.Copy);
             }
         }
 
@@ -219,7 +82,7 @@ namespace Forms
         private void lb_Compra_DragDrop(object sender, DragEventArgs e)
         {
             //Agrego el producto pasado a string a la listbox compra
-            lb_Compra.Items.Add(e.Data.GetData(DataFormats.Text));
+            listbox_Compra.Items.Add(e.Data.GetData(DataFormats.Text));
 
             //Aca tendria que descontar -1 en stock
 
@@ -227,22 +90,137 @@ namespace Forms
 
         #endregion
 
-
-        private void listBox_Empleados_DoubleClick(object sender, EventArgs e)
-        {
-            txtbox_Empleado.Text = this.listBox_Empleados.SelectedItem.ToString();
-
-        }
-
-        private void lstbox_Cliente_DoubleClick(object sender, EventArgs e)
-        {
-            txtbox_Cliente.Text = this.lstbox_Cliente.SelectedItem.ToString();
-        }
-
         private void Form_Compra_Load(object sender, EventArgs e)
         {
-
+            CargarComboBox();
+            CargarCamposProductos();
         }
 
+
+        private void btn_AgregarCompra_Click(object sender, EventArgs e)
+        {
+            //Auxiliares de validacion
+            bool EmpleadoOK = false;
+            bool ClienteOK = false;
+            bool ListaProductosOk = false;
+
+            StringBuilder mensajeError = new StringBuilder();
+
+            if ((this.cmb_Empleados.SelectedIndex == -1))
+            {
+                mensajeError.AppendLine("Debe elegir un Empleado");
+            }
+            else
+            {
+                EmpleadoOK = true;
+            }
+
+            if ((this.cmb_Clientes.SelectedIndex == -1))
+            {
+                mensajeError.AppendLine("Debe elegir un Cliente");
+            }
+            else
+            {
+                ClienteOK = true;
+            }
+
+
+            if (this.listbox_Compra.Items.Count < 0)
+            {
+                mensajeError.AppendLine("La compra debe ser de por lo menos un producto");
+            }
+            else
+            {
+                ListaProductosOk = true;
+            }
+
+            //Si se pasan todas las validaciones creo el objeto Aula
+            if (ClienteOK && EmpleadoOK && ListaProductosOk)
+            {
+                DialogResult confirmacion = MessageBox.Show("¿Desea terminar la compra con los productos seleccionados?", "Confirmacion", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+
+                if (confirmacion == DialogResult.OK)
+                {
+                  
+                    //Encuentro al Cliente que tengo que referenciar a la compra
+                    Cliente cliente = null;
+                    string auxCliente = this.cmb_Clientes.SelectedItem.ToString();
+
+                    foreach (Cliente c in this.listaClientes)
+                    {
+                        if (c.ToString() == auxCliente)
+                        {
+                            cliente = c;
+                            break;
+                        }
+                     
+                    }
+
+                    //Encuentro al Empleado que tengo que referenciar a la compra
+                    Empleado empleado = null;
+                    string auxEmpleado = this.cmb_Empleados.SelectedItem.ToString();
+
+                    foreach (Empleado d in this.listaEmpleados)
+                    {
+                        if (d.ToString() == auxEmpleado)
+                        {
+                            empleado = d;
+                            break;
+                        }
+                        
+                    }
+
+                    this.compra = new Compra(cliente,empleado);
+
+                    //Agrego los productos a la compra
+
+                    this.compra.Productos = new List<Producto>();
+
+                    List<Producto> listaProductos = new List<Producto>();
+
+                    int cantProductosAgregados = 0;
+
+                    foreach (string productoTexto in this.listbox_Compra.Items)
+                    {
+                        foreach (Producto productoObjeto in this.listaProductos)
+                        {
+                            if (productoTexto == productoObjeto.ToString())
+                            {
+                                //La sobrecarga del operador + hace el Add
+                                if (compra + productoObjeto)
+                                {
+                                    cantProductosAgregados++;
+                                }
+                            }
+                        }
+                    }
+                    DialogResult = DialogResult.OK;
+                }
+            }
+            else
+            {
+                MessageBox.Show(mensajeError.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+            }
+        }
+
+        private void btn_calcular_Click(object sender, EventArgs e)
+        {
+            float precio =0 ;
+
+  
+           foreach (string productoTexto in this.listbox_Compra.Items)
+            {
+                foreach (Producto productoObjeto in this.listaProductos)
+                {
+                    if (productoTexto == productoObjeto.ToString())
+                    {
+                        precio = precio + productoObjeto.Precio;
+
+                    }
+                }
+            }
+
+            this.txtbox_precioactualizado.Text = precio.ToString();
+        }
     }
 }

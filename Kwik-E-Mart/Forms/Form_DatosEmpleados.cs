@@ -30,5 +30,10 @@ namespace Forms
             }
 
         }
+
+        private void Form_DatosEmpleados_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

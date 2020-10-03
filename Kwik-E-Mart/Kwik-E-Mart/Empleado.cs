@@ -49,5 +49,14 @@ namespace Entidades
             this.turno = turno;
         }
         #endregion
+
+        public override string ToString()
+        {
+            StringBuilder sb = new StringBuilder();
+
+            sb.AppendLine(base.ToString() + " - " + this.cargo + " - " + this.turno);
+
+            return sb.ToString();
+        }
     }
 }   

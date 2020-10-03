@@ -40,7 +40,7 @@ namespace Entidades
         {
 
         }
-        public Persona(string nombre, string apellido, int dni)
+        protected Persona(string nombre, string apellido, int dni)
         {
             this.nombre = nombre;
             this.apellido = apellido;
@@ -48,6 +48,14 @@ namespace Entidades
         }
 
         #endregion
+
+        public override string ToString()
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.Append(this.nombre + " " + this.apellido + " - " + "DNI: " + this.dni);
+
+            return sb.ToString();
+        }
 
     }
 }

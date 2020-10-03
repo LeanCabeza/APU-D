@@ -21,6 +21,7 @@ namespace Forms
         private List<Cliente>  listaClientes = new List<Cliente>();
         private List<Empleado> listaEmpleados = new List<Empleado>();
         private List<Producto> listaProductos = new List<Producto>();
+        private List<Compra> listaCompras = new List<Compra>();
 
         public Form_principal()
         {
@@ -122,6 +123,19 @@ namespace Forms
             }
         }
 
+        private void comprarProductoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form_Compra form_nuevaCompra = new Form_Compra(this.listaEmpleados, this.listaClientes, this.listaProductos);
+            form_nuevaCompra.ShowDialog();
+
+            if (form_nuevaCompra.DialogResult == DialogResult.OK)
+            {
+                this.listaCompras.Add(form_nuevaCompra.Compra);
+
+                MessageBox.Show("Compra agregado al listado con exito", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+        }
+
         private void tsmSalir_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -156,10 +170,16 @@ namespace Forms
             datosProductos.ShowDialog();
         }
 
-        private void comprarProductoToolStripMenuItem_Click(object sender, EventArgs e)
+
+        private void listadoDeProductosToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            Form_Compra f = new Form_Compra(this.listaEmpleados, this.listaClientes,this.listaProductos);
-            f.ShowDialog();
+            Form_DatosCompra datosCompras = new Form_DatosCompra(this.listaCompras);
+            datosCompras.ShowDialog();
+        }
+
+        private void cOMPRASToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -42,6 +42,7 @@
             this.tsmListadoDeClientes = new System.Windows.Forms.ToolStripMenuItem();
             this.listadoDeEmpleadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listadoDeProductosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listadoDeProductosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.tsm_CargarDatos = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -114,6 +115,7 @@
             this.cOMPRASToolStripMenuItem.Name = "cOMPRASToolStripMenuItem";
             this.cOMPRASToolStripMenuItem.Size = new System.Drawing.Size(104, 27);
             this.cOMPRASToolStripMenuItem.Text = "COMPRAS";
+            this.cOMPRASToolStripMenuItem.Click += new System.EventHandler(this.cOMPRASToolStripMenuItem_Click);
             // 
             // comprarProductoToolStripMenuItem
             // 
@@ -131,7 +133,8 @@
             this.consultaDeStockToolStripMenuItem,
             this.tsmListadoDeClientes,
             this.listadoDeEmpleadosToolStripMenuItem,
-            this.listadoDeProductosToolStripMenuItem});
+            this.listadoDeProductosToolStripMenuItem,
+            this.listadoDeProductosToolStripMenuItem1});
             this.informesToolStripMenuItem.Name = "informesToolStripMenuItem";
             this.informesToolStripMenuItem.Size = new System.Drawing.Size(108, 27);
             this.informesToolStripMenuItem.Text = "INFORMES";
@@ -171,6 +174,13 @@
             this.listadoDeProductosToolStripMenuItem.Size = new System.Drawing.Size(336, 28);
             this.listadoDeProductosToolStripMenuItem.Text = "➔ Listado de Productos";
             this.listadoDeProductosToolStripMenuItem.Click += new System.EventHandler(this.listadoDeProductosToolStripMenuItem_Click);
+            // 
+            // listadoDeProductosToolStripMenuItem1
+            // 
+            this.listadoDeProductosToolStripMenuItem1.Name = "listadoDeProductosToolStripMenuItem1";
+            this.listadoDeProductosToolStripMenuItem1.Size = new System.Drawing.Size(336, 28);
+            this.listadoDeProductosToolStripMenuItem1.Text = "➔ Listado de Compras";
+            this.listadoDeProductosToolStripMenuItem1.Click += new System.EventHandler(this.listadoDeProductosToolStripMenuItem1_Click);
             // 
             // tsm_CargarDatos
             // 
@@ -214,5 +224,6 @@
         private System.Windows.Forms.ToolStripMenuItem tsmListadoDeClientes;
         private System.Windows.Forms.ToolStripMenuItem listadoDeEmpleadosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem listadoDeProductosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem listadoDeProductosToolStripMenuItem1;
     }
 }

@@ -7,7 +7,7 @@ using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Kwik_E_Mart
+namespace Entidades
 {
     public class Compra
     {
@@ -33,24 +33,27 @@ namespace Kwik_E_Mart
             set { this.cliente = value; }
         }
 
-        public Compra(Cliente cliente , Empleado empleado)
+        public Compra(Cliente cliente, Empleado empleado)
         {
             this.cliente = cliente;
             this.empleado = empleado;
         }
 
-        public static bool operator +(Compra compra,Producto productos)
+        public static bool operator +(Compra compra, Producto productos)
         {
-            bool retorno = false;
-            int stock = productos.Stock;
+          
+            compra.productos.Add(productos);
 
-            if ( stock < 0)
-            {
-                compra.productos.Add(productos);
-                retorno = true;
-            }
+            return true;
+        }
 
-            return retorno;
+        public override string ToString()
+        {
+            StringBuilder sb = new StringBuilder();
+
+            sb.AppendLine("Empleado: " + this.empleado + " - " + "Cliente: " + this.cliente + " - " + " Productos: " + this.productos);
+
+            return sb.ToString();
         }
 
     }

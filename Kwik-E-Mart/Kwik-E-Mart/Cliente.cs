@@ -43,8 +43,16 @@ namespace Entidades
             this.nroTelefono = nroTelefono;
         }
 
-
         #endregion
+
+        public override string ToString()
+        {
+            StringBuilder sb = new StringBuilder();
+
+            sb.AppendLine(base.ToString() + " - " + "Correo Electronico : " + this.correoElectronico + " - " + "Domicilio : " + this.domicilio + " - " + "Telefono : " + this.nroTelefono);
+
+            return sb.ToString();
+        }
 
 
     }
