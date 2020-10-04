@@ -74,13 +74,37 @@ namespace Forms
             }
 
             // Dni
+            // Verifico que el dni no exista en la lista 
+
+
             if (!(int.TryParse(this.tb_DniCliente.Text, out auxDni)))
             {
                 mensajeError.AppendLine("Ocurrio un error con el DNI");
             }
             else
             {
-                dniOk = true;
+
+                bool existe = false;
+
+                foreach (Cliente a in listaClientes)
+                {
+                    if (a.Dni == auxDni)
+                    {
+                        existe = true;
+                        break;
+                    }
+                }
+
+                if (existe == false)
+                {
+                    dniOk = true;
+
+                }
+                else
+                {
+                    mensajeError.AppendLine("Ya se registraron con ese dni");
+                }
+       
             }
 
 
@@ -160,6 +184,11 @@ namespace Forms
             {
                 MessageBox.Show(mensajeError.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
             }
+        }
+
+        private void Form_altaCliente_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

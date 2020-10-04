@@ -221,7 +221,7 @@
             this.Controls.Add(this.Pb_AltaCliente);
             this.Name = "Form_altaCliente";
             this.Text = "FormAltaCliente";
-          
+            this.Load += new System.EventHandler(this.Form_altaCliente_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Pb_AltaCliente)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

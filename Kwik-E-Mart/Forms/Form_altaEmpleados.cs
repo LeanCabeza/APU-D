@@ -73,13 +73,34 @@ namespace Forms
             }
 
             // Dni
+
             if (!(int.TryParse(this.tb_DniEmpleado.Text, out auxDni)))
             {
                 mensajeError.AppendLine("Ocurrio un error con el DNI");
             }
             else
             {
-                dniOk = true;
+                bool existe = false;
+
+                foreach (Empleado a in listaEmpleados)
+                {
+                    if (a.Dni == auxDni)
+                    {
+                        existe = true;
+                        break;
+                    }
+                }
+
+                if (existe == false)
+                {
+                    dniOk = true;
+
+                }
+                else
+                {
+                    mensajeError.AppendLine("Ya se registraron con ese dni");
+                }
+
             }
 
             // CARGO 
@@ -182,6 +203,11 @@ namespace Forms
             {
                 MessageBox.Show(mensajeError.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
             }
+        }
+
+        private void Form_altaEmpleados_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

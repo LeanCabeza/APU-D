@@ -70,7 +70,6 @@ namespace Entidades
             StringBuilder sb = new StringBuilder();
 
             sb.AppendLine("Nombre Producto: " + this.nombreProducto + " - " + "Marca: " + this.marca + " - " + "Precio: " + this.precio + " " + this.peso + " - " + "Stock : " + this.stock + " - " + "Id Producto : " + this.idProducto);
-
             return sb.ToString();
         }
     }

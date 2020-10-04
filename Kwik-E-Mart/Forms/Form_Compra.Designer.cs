@@ -46,7 +46,6 @@
             this.cmb_Empleados = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.cmb_Clientes = new System.Windows.Forms.ComboBox();
-            this.btn_calcular = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // listbox_Productos
@@ -59,6 +58,7 @@
             this.listbox_Productos.ScrollAlwaysVisible = true;
             this.listbox_Productos.Size = new System.Drawing.Size(539, 319);
             this.listbox_Productos.TabIndex = 2;
+            this.listbox_Productos.SelectedIndexChanged += new System.EventHandler(this.listbox_Productos_SelectedIndexChanged);
             this.listbox_Productos.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lb_Productos_MouseDown);
             // 
             // listbox_Compra
@@ -110,7 +110,7 @@
             // 
             this.lbl_Total.AutoSize = true;
             this.lbl_Total.Font = new System.Drawing.Font("Calibri", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.lbl_Total.Location = new System.Drawing.Point(453, 566);
+            this.lbl_Total.Location = new System.Drawing.Point(474, 566);
             this.lbl_Total.Name = "lbl_Total";
             this.lbl_Total.Size = new System.Drawing.Size(145, 33);
             this.lbl_Total.TabIndex = 66;
@@ -168,10 +168,12 @@
             // 
             // txtbox_precioactualizado
             // 
-            this.txtbox_precioactualizado.Location = new System.Drawing.Point(648, 578);
+            this.txtbox_precioactualizado.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtbox_precioactualizado.Location = new System.Drawing.Point(648, 569);
             this.txtbox_precioactualizado.Name = "txtbox_precioactualizado";
-            this.txtbox_precioactualizado.Size = new System.Drawing.Size(100, 20);
+            this.txtbox_precioactualizado.Size = new System.Drawing.Size(100, 33);
             this.txtbox_precioactualizado.TabIndex = 87;
+            this.txtbox_precioactualizado.TextChanged += new System.EventHandler(this.txtbox_precioactualizado_TextChanged);
             // 
             // lbl_empleado
             // 
@@ -215,23 +217,11 @@
             this.cmb_Clientes.Size = new System.Drawing.Size(403, 26);
             this.cmb_Clientes.TabIndex = 92;
             // 
-            // btn_calcular
-            // 
-            this.btn_calcular.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_calcular.Location = new System.Drawing.Point(909, 562);
-            this.btn_calcular.Name = "btn_calcular";
-            this.btn_calcular.Size = new System.Drawing.Size(172, 50);
-            this.btn_calcular.TabIndex = 93;
-            this.btn_calcular.Text = "Calcular Total";
-            this.btn_calcular.UseVisualStyleBackColor = true;
-            this.btn_calcular.Click += new System.EventHandler(this.btn_calcular_Click);
-            // 
             // Form_Compra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1292, 631);
-            this.Controls.Add(this.btn_calcular);
             this.Controls.Add(this.cmb_Clientes);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.cmb_Empleados);
@@ -274,6 +264,5 @@
         private System.Windows.Forms.ComboBox cmb_Empleados;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cmb_Clientes;
-        private System.Windows.Forms.Button btn_calcular;
     }
 }

@@ -1,6 +1,0 @@
-C:\Users\leand\source\repos\Kwik-E-Mart\Kwik-E-Mart\bin\Debug\Kwik-E-Mart.dll
-C:\Users\leand\source\repos\Kwik-E-Mart\Kwik-E-Mart\bin\Debug\Kwik-E-Mart.pdb
-C:\Users\leand\source\repos\Kwik-E-Mart\Kwik-E-Mart\obj\Debug\Entidades.csprojAssemblyReference.cache
-C:\Users\leand\source\repos\Kwik-E-Mart\Kwik-E-Mart\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
-C:\Users\leand\source\repos\Kwik-E-Mart\Kwik-E-Mart\obj\Debug\Kwik-E-Mart.dll
-C:\Users\leand\source\repos\Kwik-E-Mart\Kwik-E-Mart\obj\Debug\Kwik-E-Mart.pdb

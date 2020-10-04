@@ -14,6 +14,7 @@ namespace Entidades
         private Cliente cliente;
         private Empleado empleado;
         private List<Producto> productos;
+        private float monto;
 
         public List<Producto> Productos
         {
@@ -33,25 +34,50 @@ namespace Entidades
             set { this.cliente = value; }
         }
 
-        public Compra(Cliente cliente, Empleado empleado)
+        public float Monto
+        {
+            get { return this.monto; }
+            set { this.monto = value; }
+        }
+
+        public Compra(Cliente cliente, Empleado empleado,float monto)
         {
             this.cliente = cliente;
             this.empleado = empleado;
+            this.monto = monto;
         }
+
 
         public static bool operator +(Compra compra, Producto productos)
         {
-          
-            compra.productos.Add(productos);
 
-            return true;
+            bool retorno = false;
+            bool Existe = false;
+
+            foreach (Producto a in compra.productos)
+            {
+                if (a == productos)
+                {
+                    Existe = true;
+                    break;
+                }
+            }
+
+            if (Existe == false )
+            {
+                compra.productos.Add(productos);
+                retorno = true;
+            }
+
+            return retorno;
+
         }
 
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
 
-            sb.AppendLine("Empleado: " + this.empleado + " - " + "Cliente: " + this.cliente + " - " + " Productos: " + this.productos);
+            sb.AppendLine("Empleado: " + this.empleado + " - " + "Cliente: " + this.cliente + " - " + " Productos: " + this.productos + " - " + " Monto Compra : $" +this.monto );
 
             return sb.ToString();
         }

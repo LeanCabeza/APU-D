@@ -108,15 +108,35 @@ namespace Forms
 
             // ID 
 
+
             if (!(int.TryParse(this.tb_idProd.Text, out auxId)))
             {
                 mensajeError.AppendLine("Ocurrio un error con el id");
             }
             else
             {
-                idProductoOk = true;
+                bool existe = false;
+
+                foreach (Producto a in listaProductos)
+                {
+                    if (a.IdProducto == auxId)
+                    {
+                        existe = true;
+                        break;
+                    }
+                }
+
+                if (existe == false)
+                {
+                    idProductoOk = true;
+
+                }
+                else
+                {
+                    mensajeError.AppendLine("Ya registraron un producto con ese Id");
+                }
+
             }
-            
 
 
             //Si se pasan todas las validaciones creo el objeto Cliente

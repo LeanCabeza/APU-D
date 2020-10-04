@@ -40,7 +40,7 @@ namespace Forms
 
             foreach (Producto producto in this.listaProductos)
             {
-                this.listbox_Productos.Items.Add(producto.NombreProducto + " Marca : " + producto.Marca + " Precio : $ " + producto.Precio + " Peso :" + producto.Peso + "grmos" + " Stock : " + producto.Stock + " IdProducto : " + producto.IdProducto);
+                this.listbox_Productos.Items.Add("Nombre Producto: " + producto.NombreProducto + " - " + "Marca: " + producto.Marca + " - " + "Precio: " + producto.Precio + " " + producto.Peso + " - " + "Stock : " + producto.Stock + " - " + "Id Producto : " + producto.IdProducto);
             }
 
         }
@@ -83,8 +83,7 @@ namespace Forms
         {
             //Agrego el producto pasado a string a la listbox compra
             listbox_Compra.Items.Add(e.Data.GetData(DataFormats.Text));
-
-            //Aca tendria que descontar -1 en stock
+            CalcularTotal(sender, e);
 
         }
 
@@ -97,12 +96,15 @@ namespace Forms
         }
 
 
+        // Agregando la compra 
+
         private void btn_AgregarCompra_Click(object sender, EventArgs e)
         {
             //Auxiliares de validacion
             bool EmpleadoOK = false;
             bool ClienteOK = false;
             bool ListaProductosOk = false;
+            bool precioCalculadoOk = false;
 
             StringBuilder mensajeError = new StringBuilder();
 
@@ -134,8 +136,18 @@ namespace Forms
                 ListaProductosOk = true;
             }
 
+            if (this.txtbox_precioactualizado == null)
+            {
+                mensajeError.AppendLine("Debe calcular el precio total primero");
+            }
+            else
+            {
+                precioCalculadoOk = true;
+            }
+          
+
             //Si se pasan todas las validaciones creo el objeto Aula
-            if (ClienteOK && EmpleadoOK && ListaProductosOk)
+            if (ClienteOK && EmpleadoOK && ListaProductosOk && precioCalculadoOk)
             {
                 DialogResult confirmacion = MessageBox.Show("¿Desea terminar la compra con los productos seleccionados?", "Confirmacion", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
 
@@ -169,8 +181,12 @@ namespace Forms
                         }
                         
                     }
+                    
+                    string numeroEntrado = txtbox_precioactualizado.Text;
 
-                    this.compra = new Compra(cliente,empleado);
+                    float precioTotal = float.Parse(numeroEntrado);
+
+                    this.compra = new Compra(cliente,empleado,precioTotal);
 
                     //Agrego los productos a la compra
 
@@ -184,7 +200,7 @@ namespace Forms
                     {
                         foreach (Producto productoObjeto in this.listaProductos)
                         {
-                            if (productoTexto == productoObjeto.ToString())
+                            if ( (productoTexto + "\r\n") == productoObjeto.ToString())
                             {
                                 //La sobrecarga del operador + hace el Add
                                 if (compra + productoObjeto)
@@ -194,6 +210,8 @@ namespace Forms
                             }
                         }
                     }
+
+                    
                     DialogResult = DialogResult.OK;
                 }
             }
@@ -203,7 +221,8 @@ namespace Forms
             }
         }
 
-        private void btn_calcular_Click(object sender, EventArgs e)
+
+        private void CalcularTotal(object sender, EventArgs e)
         {
             float precio =0 ;
 
@@ -212,15 +231,26 @@ namespace Forms
             {
                 foreach (Producto productoObjeto in this.listaProductos)
                 {
-                    if (productoTexto == productoObjeto.ToString())
+
+                    if ((productoTexto+"\r\n") == productoObjeto.ToString())
                     {
                         precio = precio + productoObjeto.Precio;
 
                     }
                 }
             }
-
+            
             this.txtbox_precioactualizado.Text = precio.ToString();
+        }
+
+        private void listbox_Productos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtbox_precioactualizado_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

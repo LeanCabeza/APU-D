@@ -177,7 +177,6 @@
             this.cb_CargoEmpleado.Name = "cb_CargoEmpleado";
             this.cb_CargoEmpleado.Size = new System.Drawing.Size(175, 26);
             this.cb_CargoEmpleado.TabIndex = 62;
-
             // 
             // btn_aceptarEmpleado
             // 
@@ -212,6 +211,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Name = "Form_altaEmpleados";
             this.Text = "Alta Empleado";
+            this.Load += new System.EventHandler(this.Form_altaEmpleados_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

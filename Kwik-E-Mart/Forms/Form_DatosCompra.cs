@@ -20,10 +20,12 @@ namespace Forms
         {
             InitializeComponent();
             this.listaCompras = listaCompras;
-            CargarCamposCompras();
+            this.dataGridView1.DataSource = listaCompras;
+
+          //  CargarCamposCompras();
         }
 
-        private void CargarCamposCompras()
+      /*  private void CargarCamposCompras()
         {
 
             foreach (Compra c in this.listaCompras)
@@ -31,8 +33,21 @@ namespace Forms
                 this.listbox_Compras.Items.Add("Empleado: " + c.Empleado.Nombre + "  " + c.Empleado.Apellido + " || Cliente : " + c.Cliente.Nombre + "  " + c.Cliente.Apellido +" || Productos Comprados : " + c.Productos );
             }
         }
+     */
+
+
 
         private void listbox_Compras_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form_DatosCompra_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
