@@ -25,6 +25,9 @@ namespace Forms
             FormBorderStyle = FormBorderStyle.FixedSingle;
         }
 
+        /// <summary>
+        /// Cargo los datos de los empleados de listaEmpleados, formateados , en un listview
+        /// </summary>
         private void CargarCamposEmpleados()
         {
 

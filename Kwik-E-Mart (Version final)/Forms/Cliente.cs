@@ -64,9 +64,9 @@ namespace Entidades
 
         #region Metodos 
         /// <summary>
-        ///  Sobrecarga metodo toString
+        /// Sobrescribe el metodo toString heredado de persona , con los datos de un cliente formateados 
         /// </summary>
-        /// <returns> Retorna un cliente con los datos de un cliente formateados </returns>
+        /// <returns></returns>
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();

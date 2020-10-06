@@ -32,6 +32,11 @@ namespace Forms
             FormBorderStyle = FormBorderStyle.FixedSingle;
         }
 
+        /// <summary>
+        /// Harcodea datos al hacer click en "Cargar Datos"
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void tsm_CargarDatos_Click(object sender, EventArgs e)
         {
             listaClientes = new List<Cliente>();

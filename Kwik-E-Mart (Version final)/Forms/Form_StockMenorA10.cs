@@ -27,6 +27,9 @@ namespace Forms
             FormBorderStyle = FormBorderStyle.FixedSingle;
         }
 
+        /// <summary>
+        /// Cargo en un list view todos los productos que tengan stock menor o igual a 10 unidades , con sus datos formateados.
+        /// </summary>
         private void CargarCamposProductos()
         {
 

@@ -26,6 +26,9 @@ namespace Forms
             FormBorderStyle = FormBorderStyle.FixedSingle;
         }
 
+        /// <summary>
+        /// Cargo los datos de todos los clientes que estan en listaClientes en el listbox
+        /// </summary>
         private void CargarCamposClientes()
         {
 
@@ -35,7 +38,11 @@ namespace Forms
             }
 
         }
-
+        /// <summary>
+        /// Cierra el form
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btn_salir_Click(object sender, EventArgs e)
         {
             this.Close();

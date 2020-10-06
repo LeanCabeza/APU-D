@@ -41,7 +41,7 @@ namespace Forms
 
         private void btn_aceptarEmpleado_Click(object sender, EventArgs e)
         {
-            // atributos
+            // atributos de producto
 
             bool nombreProductoOk = false;
             bool marcaOk = false;
@@ -112,7 +112,7 @@ namespace Forms
             }
 
             // ID 
-
+            //Valido que el id no sea repetido
 
             if (!(int.TryParse(this.tb_idProd.Text, out auxId)))
             {
@@ -144,7 +144,7 @@ namespace Forms
             }
 
 
-            //Si se pasan todas las validaciones creo el objeto Cliente
+            //Si se pasan todas las validaciones creo el objeto Producto
 
             if (nombreProductoOk && marcaOk && precioOk && pesoOk && stockOk && idProductoOk)
             {
@@ -157,7 +157,7 @@ namespace Forms
 
                 this.producto = new Producto(nombreProducto, marcaProducto, precioProducto, pesoProducto, stock,id);
 
-                //Verifico que el empleado no sea duplicado
+                //Verifico que el producto no sea duplicado
                 bool existe = false;
 
                 foreach (Producto a in this.listaProductos)

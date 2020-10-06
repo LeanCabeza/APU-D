@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
+
     public enum ECargo
     {
         Limpieza = 1,
@@ -29,20 +30,34 @@ namespace Entidades
 
         #region Propiedades
 
+        /// <summary>
+        /// Deuvle el cargo de un empleado
+        /// </summary>
         public ECargo Cargo
         {
             get{return this.cargo;}
-            set{this.cargo = value;}
+           
         }
-
+        /// <summary>
+        /// Devuelve el turno en el que trabajo un empleado
+        /// </summary>
         public ETurno Turno
         {
             get{ return this.turno; }
-            set{ this.turno = value;}
+           
         }
         #endregion
 
         #region Constructores
+
+        /// <summary>
+        /// Constructor de Empleado
+        /// </summary>
+        /// <param name="nombre">Nombre del empleado</param>
+        /// <param name="apellido">Apellido del Empleado</param>
+        /// <param name="dni">Dni del Empleado</param>
+        /// <param name="cargo">Cargo del empleado</param>
+        /// <param name="turno">Turno en el que trabaja el empleado</param>
         public Empleado(string nombre, string apellido, int dni, ECargo cargo, ETurno turno) : base(nombre, apellido, dni)
         {
             this.cargo = cargo;
@@ -50,6 +65,11 @@ namespace Entidades
         }
         #endregion
 
+        #region Sobrecargas
+        /// <summary>
+        /// Sobrecarga el metodo To string
+        /// </summary>
+        /// <returns>Retorna losdatos del empleado con los datos formateados</returns>
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
@@ -58,5 +78,7 @@ namespace Entidades
 
             return sb.ToString();
         }
+
+        #endregion
     }
 }   

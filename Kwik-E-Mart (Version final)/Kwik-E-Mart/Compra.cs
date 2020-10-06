@@ -15,31 +15,53 @@ namespace Entidades
         private Empleado empleado;
         private List<Producto> productos;
         private float monto;
-
+       
+        #region Propiedades 
+        /// <summary>
+        /// Devuelve y permite asignar productos
+        /// </summary>
         public List<Producto> Productos
         {
             get { return this.productos; }
             set { this.productos = value; }
         }
 
+        /// <summary>
+        /// Devue y pemite asingar empleados
+        /// </summary>
         public Empleado Empleado
         {
             get { return this.empleado; }
             set { this.empleado = value; }
         }
 
+        /// <summary>
+        ///  Devuelve y permite asingar clientes
+        /// </summary>
         public Cliente Cliente
         {
             get { return this.cliente; }
             set { this.cliente = value; }
         }
 
+        /// <summary>
+        /// Deuvle y permite asginar montos
+        /// </summary>
         public float Monto
         {
             get { return this.monto; }
             set { this.monto = value; }
         }
 
+        #endregion
+
+        #region Constructores
+        /// <summary>
+        /// Constructor de Compra
+        /// </summary>
+        /// <param name="cliente">Cliente que efecuta la compra</param>
+        /// <param name="empleado">Empleado que atiende al cliente</param>
+        /// <param name="monto">Monto de la compra</param>
         public Compra(Cliente cliente, Empleado empleado,float monto)
         {
             this.cliente = cliente;
@@ -47,7 +69,16 @@ namespace Entidades
             this.monto = monto;
         }
 
+        #endregion
 
+        #region Sobrecargas
+
+        /// <summary>
+        /// Sobrecarga del operador "+" para que permita agregar un producto a una compra
+        /// </summary>
+        /// <param name="compra"></param>
+        /// <param name="productos"></param>
+        /// <returns>True si se pudo hacer , false si no se pudo hacer la carga</returns>
         public static bool operator +(Compra compra, Producto productos)
         {
 
@@ -73,6 +104,10 @@ namespace Entidades
 
         }
 
+        /// <summary>
+        /// Sobrecarga el metodo toString
+        /// </summary>
+        /// <returns>Retorna empleado con los datos de una compra formateados </returns>
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
@@ -82,5 +117,6 @@ namespace Entidades
             return sb.ToString();
         }
 
+        #endregion
     }
 }

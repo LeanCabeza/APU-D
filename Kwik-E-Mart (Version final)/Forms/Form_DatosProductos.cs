@@ -26,6 +26,9 @@ namespace Forms
             FormBorderStyle = FormBorderStyle.FixedSingle;
         }
 
+        /// <summary>
+        /// Cargo todos los campos de los productos que estan en lista producto , formateados.
+        /// </summary>
         private void CargarCamposProductos()
         {
 

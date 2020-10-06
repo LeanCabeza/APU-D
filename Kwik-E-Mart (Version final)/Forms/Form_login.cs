@@ -22,8 +22,10 @@ namespace Forms
             FormBorderStyle = FormBorderStyle.FixedSingle;
 
         }
+
         private void btn_aceptar_Click(object sender, EventArgs e)
         {
+            /// Si el usuario es admin y es 1234 , te dejo acceder el programa , sino , no.
             if (txt_usuario.Text == "admin" && txt_pass.Text == "1234")
             {
                 Form_principal menu = new Form_principal();

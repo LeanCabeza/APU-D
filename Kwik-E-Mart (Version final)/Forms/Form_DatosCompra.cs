@@ -15,7 +15,10 @@ namespace Forms
     public partial class Form_DatosCompra : Form
     {
         List<Compra> listaCompras;
-
+        /// <summary>
+        /// Cargo los datos de todas las compras en un data grid view 
+        /// </summary>
+        /// <param name="listaCompras"></param>
         public Form_DatosCompra(List<Compra> listaCompras)
         {
             InitializeComponent();
@@ -27,22 +30,6 @@ namespace Forms
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
             FormBorderStyle = FormBorderStyle.FixedSingle;
             dgv_ComprasRealizadas.ReadOnly = true;
-        }
-
-
-        private void listbox_Compras_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Form_DatosCompra_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
 
         private void btn_salir_Click(object sender, EventArgs e)

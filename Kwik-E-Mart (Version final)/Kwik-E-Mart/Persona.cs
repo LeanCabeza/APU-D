@@ -6,25 +6,32 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
+
     public abstract class Persona // para que no se pueda crear un objeto persona directamente 
     {
-        private string nombre;  // para no hacerlo publico que no se puede hago el get y el set , y poder settearlo desde donde yo quiera
+
+        private string nombre; 
         private string apellido; 
         private int dni;   
 
         #region Propiedades
-
+        /// <summary>
+        /// Devuelve el nombre de la persona 
+        /// </summary>
         public string Nombre
         {
-            get { return this.nombre; }
-            set { this.nombre = value; }
+            get { return this.nombre; }   
         }
-
+        /// <summary>
+        /// Devuelve el apellido de la persona
+        /// </summary>
         public string Apellido
         {
             get { return this.apellido; }
-            set { this.apellido = value; }
         }
+        /// <summary>
+        /// Devuelve el dni de la persona y permite asignarlo
+        /// </summary>
 
         public int Dni
         {
@@ -36,10 +43,12 @@ namespace Entidades
 
         #region Constructores
 
-        public Persona()
-        {
-
-        }
+        /// <summary>
+        ///  Constructor de persona
+        /// </summary>
+        /// <param name="nombre">Nombre de la persona</param>
+        /// <param name="apellido">Apellido de la persona</param>
+        /// <param name="dni">Dni de la persona </param>
         protected Persona(string nombre, string apellido, int dni)
         {
             this.nombre = nombre;
@@ -49,6 +58,11 @@ namespace Entidades
 
         #endregion
 
+        #region  Sobrecargas
+        /// <summary>
+        /// Sobrecarga del metodo to string
+        /// </summary>
+        /// <returns>Retorna una persona con sus datos formateados</returns>
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
@@ -56,6 +70,6 @@ namespace Entidades
 
             return sb.ToString();
         }
-
+        #endregion
     }
 }

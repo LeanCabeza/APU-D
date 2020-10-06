@@ -48,7 +48,7 @@
             this.dgv_ComprasRealizadas.Name = "dgv_ComprasRealizadas";
             this.dgv_ComprasRealizadas.Size = new System.Drawing.Size(887, 291);
             this.dgv_ComprasRealizadas.TabIndex = 3;
-            this.dgv_ComprasRealizadas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+
             // 
             // btn_salir
             // 
@@ -92,7 +92,6 @@
             this.Controls.Add(this.dgv_ComprasRealizadas);
             this.Name = "Form_DatosCompra";
             this.Text = "Datos Compra";
-            this.Load += new System.EventHandler(this.Form_DatosCompra_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_ComprasRealizadas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_Banner)).EndInit();
             this.ResumeLayout(false);

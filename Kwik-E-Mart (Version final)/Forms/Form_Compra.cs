@@ -40,8 +40,14 @@ namespace Forms
 
         }
 
+        #region Metodos
+
+        /// <summary>
+        /// Carga los campos de los productos en la list box
+        /// </summary>
         private void CargarCamposProductos()
         {
+            
 
             foreach (Producto producto in this.listaProductos)
             {
@@ -50,14 +56,54 @@ namespace Forms
 
         }
 
+        /// <summary>
+        /// Cargo los combo box con sus datos correspondientes
+        /// </summary>
         private void CargarComboBox()
         {
+           
             this.cmb_Empleados.Enabled = true;
             this.cmb_Clientes.Enabled = true;
             this.cmb_Empleados.DataSource = listaEmpleados;
             this.cmb_Clientes.DataSource = listaClientes;
         }
 
+        /// <summary>
+        /// Calcula el monto total de todos los productos que estan en la listbox y corrobora si hay un simpson como cliente y le hace el descuento
+        /// </summary>
+        private void CalcularTotal()
+        {
+            float precio = 0;
+
+
+            foreach (string productoTexto in this.listbox_Compra.Items)
+            {
+                foreach (Producto productoObjeto in this.listaProductos)
+                {
+
+                    if ((productoTexto + "\r\n") == productoObjeto.ToString())
+                    {
+                        if (cmb_Clientes.SelectedItem.ToString().Contains("Simpson"))
+                        {
+                            precio = precio + productoObjeto.Precio;
+                            float descuento = (precio * 13) / 100;
+                            precio = precio - descuento;
+                            lbl_Descuento.Text = "[DESCUENTO] Sos de la familia simpson pagas 13% menos ";
+                        }
+                        else
+                        {
+                            precio = precio + productoObjeto.Precio;
+                            lbl_Descuento.Text = "[No tenes descuento]";
+                        }
+
+
+                    }
+                }
+            }
+
+            this.txtbox_precioactualizado.Text = precio.ToString();
+        }
+        #endregion
 
         #region Evento Drag and drop
 
@@ -88,7 +134,7 @@ namespace Forms
         {
             //Agrego el producto pasado a string a la listbox compra
             listbox_Compra.Items.Add(e.Data.GetData(DataFormats.Text));
-            CalcularTotal(sender, e);
+            CalcularTotal();
 
         }
 
@@ -96,17 +142,15 @@ namespace Forms
 
         // Doble click para sacar de la lista 
 
-
         private void listbox_Compra_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             if (!(listbox_Compra.SelectedItem is null))
             {
                 string producto = this.listbox_Compra.SelectedItem.ToString();
                 this.listbox_Compra.Items.Remove(producto);
-                CalcularTotal(sender,e);
+                CalcularTotal();
             }
         }
-
 
 
         private void Form_Compra_Load(object sender, EventArgs e)
@@ -131,6 +175,8 @@ namespace Forms
 
             StringBuilder mensajeError = new StringBuilder();
 
+            // Valido que se haya elegido algun empleado
+
             if ((this.cmb_Empleados.SelectedIndex == -1))
             {
                 mensajeError.AppendLine("Debe elegir un Empleado");
@@ -139,6 +185,8 @@ namespace Forms
             {
                 EmpleadoOK = true;
             }
+
+            //Valido que se haya elegido algun cliente
 
             if ((this.cmb_Clientes.SelectedIndex == -1))
             {
@@ -151,6 +199,7 @@ namespace Forms
 
             }
 
+            // Valido que tengan al menos un producto en la lista de compras , sino no, no hay compra.
 
             if (this.listbox_Compra.Items.Count < 0)
             {
@@ -161,6 +210,8 @@ namespace Forms
                 ListaProductosOk = true;
             }
 
+            // Corroboro que el gasto total no este en 0
+
             if ((string.IsNullOrEmpty(txtbox_precioactualizado.Text)))
             {
                 mensajeError.AppendLine("Debe calcular el precio total primero");
@@ -170,7 +221,7 @@ namespace Forms
                 precioCalculadoOk = true;
             }
 
-            // hay stock ?
+            // hay stock ? , si no hay stock no permito hace la compra hasta que no saquen el producto sin stock
 
 
             foreach (string productoTexto in this.listbox_Compra.Items)
@@ -274,40 +325,6 @@ namespace Forms
             {
                 MessageBox.Show(mensajeError.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
             }
-        }
-
-
-        private void CalcularTotal(object sender, EventArgs e)
-        {
-            float precio =0 ;
-
-  
-           foreach (string productoTexto in this.listbox_Compra.Items)
-            {
-                foreach (Producto productoObjeto in this.listaProductos)
-                {
-
-                    if ((productoTexto+"\r\n") == productoObjeto.ToString())
-                    {
-                        if(cmb_Clientes.SelectedItem.ToString().Contains("Simpson"))
-                        {
-                            precio = precio + productoObjeto.Precio;
-                            float descuento = (precio * 13) / 100;
-                            precio = precio - descuento;
-                            lbl_Descuento.Text = "[DESCUENTO] Sos de la familia simpson pagas 13% menos ";
-                        }
-                        else
-                        {
-                            precio = precio + productoObjeto.Precio;
-                            lbl_Descuento.Text = "[No tenes descuento]";
-                        }
-
-
-                    }
-                }
-            }
-           
-            this.txtbox_precioactualizado.Text = precio.ToString();
         }
 
         private void txtbox_precioactualizado_TextChanged(object sender, EventArgs e)

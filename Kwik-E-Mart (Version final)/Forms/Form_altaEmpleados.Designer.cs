@@ -211,7 +211,6 @@
             this.Controls.Add(this.pb_banner);
             this.Name = "Form_altaEmpleados";
             this.Text = "Alta Empleado";
-            this.Load += new System.EventHandler(this.Form_altaEmpleados_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_banner)).EndInit();
             this.ResumeLayout(false);

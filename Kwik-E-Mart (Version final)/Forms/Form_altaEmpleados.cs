@@ -78,6 +78,7 @@ namespace Forms
             }
 
             // Dni
+            // Corroboro si ya no tengo un empleado con ese dni 
 
             if (!(int.TryParse(this.tb_DniEmpleado.Text, out auxDni)))
             {
@@ -130,7 +131,7 @@ namespace Forms
                 turnoOk = true;
             }
 
-            //Si se pasan todas las validaciones creo el objeto Cliente
+            //Si se pasan todas las validaciones creo el objeto Empleado
 
             if (nombreOK && apellidoOK && dniOk && cargoOk && turnoOk)
             {
@@ -210,9 +211,5 @@ namespace Forms
             }
         }
 
-        private void Form_altaEmpleados_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

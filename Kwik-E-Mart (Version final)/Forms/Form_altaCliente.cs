@@ -15,12 +15,16 @@ namespace Forms
     public partial class Form_altaCliente : Form
     {
         private Cliente cliente;
-        //Estos campos se utilizan para verificar que el cliente a dar de alta no se encuentre ya agregado
+
+        //Estos campos se utilizan para verificar que el cliente a dar de alta no se encuentre ya agregado o tenga datos que no me sirven.
         // si lo cargo directamente como un empleado puede ser que surja algun error y termina cargando por error un cliente que no quiero que cargue
         private List<Cliente> listaClientes =  new List<Cliente>();
 
         #region Propiedades
 
+        /// <summary>
+        /// Devuelve un cliente
+        /// </summary>
         public Cliente Cliente
         {
             get { return this.cliente; }
@@ -39,7 +43,11 @@ namespace Forms
             FormBorderStyle = FormBorderStyle.FixedSingle;
 
         }
-
+        /// <summary>
+        /// Al aceptar da de alta un cliente
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btn_aceptarCliente_Click(object sender, EventArgs e)
         {
             //Atributos Persona
@@ -79,8 +87,7 @@ namespace Forms
             }
 
             // Dni
-            // Verifico que el dni no exista en la lista 
-
+            // Verifico que el dni no exista en la lista , no puede haber dos dni iguales.
 
             if (!(int.TryParse(this.tb_DniCliente.Text, out auxDni)))
             {
@@ -111,7 +118,6 @@ namespace Forms
                 }
        
             }
-
 
             // Email 
 
@@ -164,7 +170,8 @@ namespace Forms
                 this.cliente = new Cliente(nombre, apellido, dni, email, domicilio, telefono);
 
                 //Verifico que el cliente no sea duplicado
-                //2 alumnos son iguales si tienen igual numero de dni
+                //2 Clientes son iguales si tienen igual numero de dni
+
                 bool existe =false;
 
                 foreach (Cliente a in this.listaClientes)

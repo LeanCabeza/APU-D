@@ -38,7 +38,7 @@
             this.lbl_precio = new System.Windows.Forms.Label();
             this.lbl_marcaProducto = new System.Windows.Forms.Label();
             this.lbl_nombreProducto = new System.Windows.Forms.Label();
-            this.btn_aceptarEmpleado = new System.Windows.Forms.Button();
+            this.btn_aceptarProducto = new System.Windows.Forms.Button();
             this.tb_peso = new System.Windows.Forms.TextBox();
             this.lbl_peso = new System.Windows.Forms.Label();
             this.pb_Lisa = new System.Windows.Forms.PictureBox();
@@ -138,16 +138,16 @@
             this.lbl_nombreProducto.TabIndex = 32;
             this.lbl_nombreProducto.Text = "Nombre Producto";
             // 
-            // btn_aceptarEmpleado
+            // btn_aceptarProducto
             // 
-            this.btn_aceptarEmpleado.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_aceptarEmpleado.Location = new System.Drawing.Point(209, 345);
-            this.btn_aceptarEmpleado.Name = "btn_aceptarEmpleado";
-            this.btn_aceptarEmpleado.Size = new System.Drawing.Size(118, 31);
-            this.btn_aceptarEmpleado.TabIndex = 64;
-            this.btn_aceptarEmpleado.Text = "Aceptar";
-            this.btn_aceptarEmpleado.UseVisualStyleBackColor = true;
-            this.btn_aceptarEmpleado.Click += new System.EventHandler(this.btn_aceptarEmpleado_Click);
+            this.btn_aceptarProducto.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_aceptarProducto.Location = new System.Drawing.Point(209, 345);
+            this.btn_aceptarProducto.Name = "btn_aceptarProducto";
+            this.btn_aceptarProducto.Size = new System.Drawing.Size(118, 31);
+            this.btn_aceptarProducto.TabIndex = 64;
+            this.btn_aceptarProducto.Text = "Aceptar";
+            this.btn_aceptarProducto.UseVisualStyleBackColor = true;
+            this.btn_aceptarProducto.Click += new System.EventHandler(this.btn_aceptarEmpleado_Click);
             // 
             // tb_peso
             // 
@@ -209,7 +209,7 @@
             this.Controls.Add(this.pb_banner);
             this.Controls.Add(this.tb_peso);
             this.Controls.Add(this.lbl_peso);
-            this.Controls.Add(this.btn_aceptarEmpleado);
+            this.Controls.Add(this.btn_aceptarProducto);
             this.Controls.Add(this.tb_idProd);
             this.Controls.Add(this.tb_stock);
             this.Controls.Add(this.tb_precio);
@@ -241,7 +241,7 @@
         private System.Windows.Forms.Label lbl_precio;
         private System.Windows.Forms.Label lbl_marcaProducto;
         private System.Windows.Forms.Label lbl_nombreProducto;
-        private System.Windows.Forms.Button btn_aceptarEmpleado;
+        private System.Windows.Forms.Button btn_aceptarProducto;
         private System.Windows.Forms.TextBox tb_peso;
         private System.Windows.Forms.Label lbl_peso;
         private System.Windows.Forms.PictureBox pb_banner;
