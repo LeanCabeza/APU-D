@@ -88,7 +88,7 @@ namespace Forms
                             precio = precio + productoObjeto.Precio;
                             float descuento = (precio * 13) / 100;
                             precio = precio - descuento;
-                            lbl_Descuento.Text = "[DESCUENTO] Sos de la familia simpson pagas 13% menos ";
+                            lbl_Descuento.Text = "[DESCUENTO] Sos de la familia simpson pagas 13% menos ,te ahorraste : $" + descuento;
                         }
                         else
                         {
@@ -335,6 +335,11 @@ namespace Forms
         private void btn_salir_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void cmb_Clientes_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            CalcularTotal();
         }
     }
 }

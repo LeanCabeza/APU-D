@@ -42,7 +42,6 @@
             this.listadoDeProductosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listadoDeProductosCompras = new System.Windows.Forms.ToolStripMenuItem();
             this.stockConMenosDe10UnidadesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsm_CargarDatos = new System.Windows.Forms.ToolStripMenuItem();
             this.pb_banner = new System.Windows.Forms.PictureBox();
             this.picture_apu = new System.Windows.Forms.PictureBox();
             this.lbl_bienvenido = new System.Windows.Forms.Label();
@@ -59,11 +58,10 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsm_altas,
             this.tsm_Compras,
-            this.tsm_Informes,
-            this.tsm_CargarDatos});
-            this.menuStrip1.Location = new System.Drawing.Point(258, 137);
+            this.tsm_Informes});
+            this.menuStrip1.Location = new System.Drawing.Point(318, 133);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(447, 32);
+            this.menuStrip1.Size = new System.Drawing.Size(295, 32);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "BarraMenu";
             // 
@@ -119,7 +117,6 @@
             this.tsm_Compras.Name = "tsm_Compras";
             this.tsm_Compras.Size = new System.Drawing.Size(107, 28);
             this.tsm_Compras.Text = "COMPRAS";
-  
             // 
             // comprarProductoToolStripMenuItem
             // 
@@ -141,7 +138,6 @@
             this.tsm_Informes.Name = "tsm_Informes";
             this.tsm_Informes.Size = new System.Drawing.Size(110, 28);
             this.tsm_Informes.Text = "INFORMES";
-
             // 
             // tsmListadoDeClientes
             // 
@@ -178,14 +174,6 @@
             this.stockConMenosDe10UnidadesToolStripMenuItem.Text = "➔ Stock con menos de 10 unidades";
             this.stockConMenosDe10UnidadesToolStripMenuItem.Click += new System.EventHandler(this.stockConMenosDe10UnidadesToolStripMenuItem_Click);
             // 
-            // tsm_CargarDatos
-            // 
-            this.tsm_CargarDatos.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.tsm_CargarDatos.Name = "tsm_CargarDatos";
-            this.tsm_CargarDatos.Size = new System.Drawing.Size(152, 28);
-            this.tsm_CargarDatos.Text = "CARGAR DATOS";
-            this.tsm_CargarDatos.Click += new System.EventHandler(this.tsm_CargarDatos_Click);
-            // 
             // pb_banner
             // 
             this.pb_banner.Image = global::Forms.Properties.Resources.top1;
@@ -194,7 +182,6 @@
             this.pb_banner.Size = new System.Drawing.Size(835, 90);
             this.pb_banner.TabIndex = 100;
             this.pb_banner.TabStop = false;
-
             // 
             // picture_apu
             // 
@@ -204,13 +191,12 @@
             this.picture_apu.Size = new System.Drawing.Size(222, 429);
             this.picture_apu.TabIndex = 101;
             this.picture_apu.TabStop = false;
-
             // 
             // lbl_bienvenido
             // 
             this.lbl_bienvenido.AutoSize = true;
             this.lbl_bienvenido.Font = new System.Drawing.Font("Calibri", 21.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_bienvenido.Location = new System.Drawing.Point(308, 235);
+            this.lbl_bienvenido.Location = new System.Drawing.Point(299, 259);
             this.lbl_bienvenido.Name = "lbl_bienvenido";
             this.lbl_bienvenido.Size = new System.Drawing.Size(364, 36);
             this.lbl_bienvenido.TabIndex = 102;
@@ -219,7 +205,7 @@
             // btn_salirr
             // 
             this.btn_salirr.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_salirr.Location = new System.Drawing.Point(374, 419);
+            this.btn_salirr.Location = new System.Drawing.Point(370, 406);
             this.btn_salirr.Name = "btn_salirr";
             this.btn_salirr.Size = new System.Drawing.Size(220, 45);
             this.btn_salirr.TabIndex = 103;
@@ -232,7 +218,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.PeachPuff;
-            this.ClientSize = new System.Drawing.Size(834, 492);
+            this.ClientSize = new System.Drawing.Size(802, 492);
             this.Controls.Add(this.btn_salirr);
             this.Controls.Add(this.lbl_bienvenido);
             this.Controls.Add(this.picture_apu);
@@ -240,7 +226,7 @@
             this.Controls.Add(this.menuStrip1);
             this.Name = "Form_principal";
             this.Text = "Kwik-E-Mart - Cabeza Leandro 2ºD";
-
+            this.Load += new System.EventHandler(this.Form_principal_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_banner)).EndInit();
@@ -261,7 +247,6 @@
         private System.Windows.Forms.ToolStripMenuItem tsm_Compras;
         private System.Windows.Forms.ToolStripMenuItem comprarProductoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tsm_Informes;
-        private System.Windows.Forms.ToolStripMenuItem tsm_CargarDatos;
         private System.Windows.Forms.ToolStripMenuItem tsmListadoDeClientes;
         private System.Windows.Forms.ToolStripMenuItem listadoDeEmpleadosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem listadoDeProductosToolStripMenuItem;
