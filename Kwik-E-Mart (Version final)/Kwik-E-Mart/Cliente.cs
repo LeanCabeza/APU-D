@@ -64,14 +64,25 @@ namespace Entidades
 
         #region Metodos 
         /// <summary>
-        ///  Sobrecarga metodo toString
+        ///  Sobrecarga metodo toString ( en realidad sigue existiendo pero le doy otra funcionalidad )
         /// </summary>
         /// <returns> Retorna un cliente con los datos de un cliente formateados </returns>
         public override string ToString()
         {
+            // implemento del metodo to string en clase derivada  
+
             StringBuilder sb = new StringBuilder();
 
             sb.AppendLine(base.ToString() + " - " + "Correo Electronico : " + this.correoElectronico + " - " + "Domicilio : " + this.domicilio + " - " + "Telefono : " + this.nroTelefono);
+
+            return sb.ToString();
+        }
+
+        public override string Saludar()
+        {
+            StringBuilder sb = new StringBuilder();
+
+            sb.AppendLine(base.Saludar() + " y fui el Cliente." );
 
             return sb.ToString();
         }

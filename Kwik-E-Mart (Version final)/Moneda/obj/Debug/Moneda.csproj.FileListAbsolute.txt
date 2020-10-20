@@ -1,0 +1,6 @@
+C:\Users\leand\Desktop\APU-E\Kwik-E-Mart (Version Final)\Moneda\bin\Debug\Moneda.dll
+C:\Users\leand\Desktop\APU-E\Kwik-E-Mart (Version Final)\Moneda\bin\Debug\Moneda.pdb
+C:\Users\leand\Desktop\APU-E\Kwik-E-Mart (Version Final)\Moneda\obj\Debug\Moneda.csprojAssemblyReference.cache
+C:\Users\leand\Desktop\APU-E\Kwik-E-Mart (Version Final)\Moneda\obj\Debug\Moneda.csproj.CoreCompileInputs.cache
+C:\Users\leand\Desktop\APU-E\Kwik-E-Mart (Version Final)\Moneda\obj\Debug\Moneda.dll
+C:\Users\leand\Desktop\APU-E\Kwik-E-Mart (Version Final)\Moneda\obj\Debug\Moneda.pdb

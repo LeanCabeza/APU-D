@@ -94,11 +94,13 @@ namespace Entidades
 
         #region Sobrecargas
         /// <summary>
-        /// Sobrecarga delmetodo to string
+        /// Sobrecarga delmetodo to string 
         /// </summary>
         /// <returns>Retorna un producto con los datos del producto formateados </returns>
         public override string ToString()
         {
+            // implemento del metodo to string en clase derivada  
+
             StringBuilder sb = new StringBuilder();
 
             sb.AppendLine("Producto: " + this.nombreProducto + " - " + "Marca: " + this.marca + " - " + "Precio: " + this.precio + " " + this.peso + " - " + "Stock : " + this.stock + " - " + "Id Producto : " + this.idProducto);

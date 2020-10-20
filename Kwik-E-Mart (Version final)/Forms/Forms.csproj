@@ -222,9 +222,17 @@
     <None Include="Resources\homeroEmpleado.png" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ExcepcionesGeneradas\ExcepcionesGeneradas.csproj">
+      <Project>{fa48db46-0314-4c3e-a354-accf691b7cce}</Project>
+      <Name>ExcepcionesGeneradas</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Kwik-E-Mart\Entidades.csproj">
       <Project>{25147112-f5e6-4be4-a5c8-98a6955045d3}</Project>
       <Name>Entidades</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Moneda\Moneda.csproj">
+      <Project>{84da2fc8-b6df-445c-be71-75ed392c564e}</Project>
+      <Name>Moneda</Name>
     </ProjectReference>
     <ProjectReference Include="..\Validaciones\Validaciones.csproj">
       <Project>{8abfdf47-269e-4fca-b9e7-ab3d40f2c79e}</Project>

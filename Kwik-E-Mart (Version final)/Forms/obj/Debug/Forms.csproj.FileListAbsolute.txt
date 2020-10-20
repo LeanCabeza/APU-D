@@ -119,3 +119,7 @@ C:\Users\leand\Desktop\APU-E\Kwik-E-Mart (Version Final)\Forms\obj\Debug\Forms.c
 C:\Users\leand\Desktop\APU-E\Kwik-E-Mart (Version Final)\Forms\obj\Debug\Forms.csproj.CopyComplete
 C:\Users\leand\Desktop\APU-E\Kwik-E-Mart (Version Final)\Forms\obj\Debug\Forms.exe
 C:\Users\leand\Desktop\APU-E\Kwik-E-Mart (Version Final)\Forms\obj\Debug\Forms.pdb
+C:\Users\leand\Desktop\APU-E\Kwik-E-Mart (Version Final)\Forms\bin\Debug\Moneda.dll
+C:\Users\leand\Desktop\APU-E\Kwik-E-Mart (Version Final)\Forms\bin\Debug\Moneda.pdb
+C:\Users\leand\Desktop\APU-E\Kwik-E-Mart (Version Final)\Forms\bin\Debug\ExcepcionesGeneradas.dll
+C:\Users\leand\Desktop\APU-E\Kwik-E-Mart (Version Final)\Forms\bin\Debug\ExcepcionesGeneradas.pdb

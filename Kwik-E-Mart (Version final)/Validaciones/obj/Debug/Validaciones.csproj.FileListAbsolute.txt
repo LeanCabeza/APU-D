@@ -10,3 +10,9 @@ C:\Users\leand\Desktop\APU-E\Kwik-E-Mart\Validaciones\obj\Debug\Validaciones.csp
 C:\Users\leand\Desktop\APU-E\Kwik-E-Mart\Validaciones\obj\Debug\Validaciones.csproj.CoreCompileInputs.cache
 C:\Users\leand\Desktop\APU-E\Kwik-E-Mart\Validaciones\obj\Debug\Validaciones.dll
 C:\Users\leand\Desktop\APU-E\Kwik-E-Mart\Validaciones\obj\Debug\Validaciones.pdb
+C:\Users\leand\Desktop\APU-E\Kwik-E-Mart (Version Final)\Validaciones\bin\Debug\Validaciones.dll
+C:\Users\leand\Desktop\APU-E\Kwik-E-Mart (Version Final)\Validaciones\bin\Debug\Validaciones.pdb
+C:\Users\leand\Desktop\APU-E\Kwik-E-Mart (Version Final)\Validaciones\obj\Debug\Validaciones.csprojAssemblyReference.cache
+C:\Users\leand\Desktop\APU-E\Kwik-E-Mart (Version Final)\Validaciones\obj\Debug\Validaciones.csproj.CoreCompileInputs.cache
+C:\Users\leand\Desktop\APU-E\Kwik-E-Mart (Version Final)\Validaciones\obj\Debug\Validaciones.dll
+C:\Users\leand\Desktop\APU-E\Kwik-E-Mart (Version Final)\Validaciones\obj\Debug\Validaciones.pdb

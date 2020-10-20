@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Entidades;
+using Moneda;
 
 
 namespace Forms
@@ -48,7 +49,6 @@ namespace Forms
         private void CargarCamposProductos()
         {
             
-
             foreach (Producto producto in this.listaProductos)
             {
                 this.listbox_Productos.Items.Add("Producto: " + producto.NombreProducto + " - " + "Marca: " + producto.Marca + " - " + "Precio: " + producto.Precio + " " + producto.Peso + " - " + "Stock : " + producto.Stock + " - " + "Id Producto : " + producto.IdProducto);
@@ -101,7 +101,10 @@ namespace Forms
                 }
             }
 
-            this.txtbox_precioactualizado.Text = precio.ToString();
+            string precioStr = precio.ToString();
+
+            this.txtbox_precioactualizado.Text = precioStr;
+            this.label_dolares.Text = Monedas.PesoADolar(precioStr);
         }
         #endregion
 
@@ -232,10 +235,9 @@ namespace Forms
                     {
                         if (productoObjeto.Stock >= 1)
                         {
+                            productoObjeto.Stock = productoObjeto.Stock - 1;
                             hayStockOk = true;
-                         
                            
-                            productoObjeto.Stock = productoObjeto.Stock -1;
                         }
                         else
                         {
@@ -269,7 +271,7 @@ namespace Forms
                             cliente = c;
                             break;
                         }
-                     
+                        
                     }
 
                     //Encuentro al Empleado que tengo que referenciar a la compra
@@ -292,7 +294,7 @@ namespace Forms
 
 
                     this.compra = new Compra(cliente,empleado,precioTotal);
-
+                    
                     
                     //Agrego los productos a la compra
 
@@ -317,7 +319,10 @@ namespace Forms
                         }
                     }
 
-                    
+                   // Esto esta echo solamente para usar un overray , Informa quien fue el cliente y el empleado.
+
+                    MessageBox.Show(empleado.Saludar() +"\n"+ cliente.Saludar(),"Gracias , vuelva Prontoss!!") ;
+
                     DialogResult = DialogResult.OK;
                 }
             }

@@ -79,22 +79,20 @@ namespace Entidades
         /// <param name="compra"></param>
         /// <param name="productos"></param>
         /// <returns>True si se pudo hacer , false si no se pudo hacer la carga</returns>
+        
         public static bool operator +(Compra compra, Producto productos)
         {
 
             bool retorno = false;
-            bool Existe = false;
+            bool hacerAdd = true;
 
-            foreach (Producto a in compra.productos)
-            {
-                if (a == productos)
+                if (productos.Stock < 0)
                 {
-                    Existe = true;
-                    break;
+                    hacerAdd = false;
                 }
-            }
+           
 
-            if (Existe == false )
+            if (hacerAdd == true )
             {
                 compra.productos.Add(productos);
                 retorno = true;

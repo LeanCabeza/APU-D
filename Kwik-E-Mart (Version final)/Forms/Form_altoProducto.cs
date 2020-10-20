@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Validaciones;
 using Entidades;
+using ExcepcionesGeneradasException;
 
 namespace Forms
 {
@@ -41,6 +42,9 @@ namespace Forms
 
         private void btn_aceptarEmpleado_Click(object sender, EventArgs e)
         {
+            try
+            {
+
             // atributos de producto
 
             bool nombreProductoOk = false;
@@ -181,6 +185,26 @@ namespace Forms
             else
             {
                 MessageBox.Show(mensajeError.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+            }
+
+
+            int stockAux = int.Parse(tb_stock.Text);
+            int pesoAux= int.Parse(tb_idProd.Text);
+            int precioAux = int.Parse(tb_precio.Text);
+            
+
+            if ( stockAux <0 || pesoAux <0 || precioAux <0 )
+                 {
+                    throw new ExcepcionesGeneradas("El stock, o el peso , o el precio son menores a 0 , procedo a cerrar el programa");
+                 }
+
+
+            }
+            catch (ExcepcionesGeneradas stockProblem)
+            {
+                MessageBox.Show(stockProblem.Message);
+                Application.Exit();
+
             }
         }
 

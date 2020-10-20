@@ -63,15 +63,16 @@ namespace Entidades
             this.cargo = cargo;
             this.turno = turno;
         }
-        #endregion
+        #endregion  
 
         #region Sobrecargas
         /// <summary>
-        /// Sobrecarga el metodo To string
+        /// Sobrecarga el metodo To string  ( en realidad sigue existiendo pero le doy otra funcionalidad )
         /// </summary>
         /// <returns>Retorna losdatos del empleado con los datos formateados</returns>
         public override string ToString()
         {
+            // implemento del metodo to string en clase derivada  
             StringBuilder sb = new StringBuilder();
 
             sb.AppendLine(base.ToString() + " - " + this.cargo + " - " + this.turno);
@@ -79,6 +80,14 @@ namespace Entidades
             return sb.ToString();
         }
 
+        public override string Saludar()
+        {
+            StringBuilder sb = new StringBuilder();
+
+            sb.AppendLine(base.Saludar() + " y fui el Empleado");
+
+            return sb.ToString();
+        }
         #endregion
     }
 }   

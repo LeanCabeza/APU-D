@@ -39,6 +39,13 @@ namespace Entidades
             set { this.dni = value;}
         }
 
+        public virtual string Saludar()
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.Append("Mi nombre es: " + this.Nombre + " y mi Apellido  es: " + this.Apellido);
+            return sb.ToString();
+        }
+
         #endregion
 
         #region Constructores
@@ -65,6 +72,7 @@ namespace Entidades
         /// <returns>Retorna una persona con sus datos formateados</returns>
         public override string ToString()
         {
+      
             StringBuilder sb = new StringBuilder();
             sb.Append(this.nombre + " " + this.apellido + " - " + "DNI: " + this.dni);
 

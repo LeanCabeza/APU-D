@@ -53,10 +53,10 @@
             // txt_usuario
             // 
             this.txt_usuario.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.txt_usuario.Font = new System.Drawing.Font("Bahnschrift Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_usuario.Font = new System.Drawing.Font("Impact", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_usuario.Location = new System.Drawing.Point(367, 61);
             this.txt_usuario.Name = "txt_usuario";
-            this.txt_usuario.Size = new System.Drawing.Size(137, 27);
+            this.txt_usuario.Size = new System.Drawing.Size(137, 23);
             this.txt_usuario.TabIndex = 2;
             // 
             // lbl_User
@@ -83,10 +83,11 @@
             // txt_pass
             // 
             this.txt_pass.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.txt_pass.Font = new System.Drawing.Font("Bahnschrift Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_pass.Font = new System.Drawing.Font("Impact", 10F);
             this.txt_pass.Location = new System.Drawing.Point(367, 111);
             this.txt_pass.Name = "txt_pass";
-            this.txt_pass.Size = new System.Drawing.Size(137, 27);
+            this.txt_pass.PasswordChar = 'x';
+            this.txt_pass.Size = new System.Drawing.Size(137, 24);
             this.txt_pass.TabIndex = 3;
             // 
             // PB_Login

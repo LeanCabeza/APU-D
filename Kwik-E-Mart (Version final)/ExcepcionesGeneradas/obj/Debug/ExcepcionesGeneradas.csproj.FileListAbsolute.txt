@@ -1,0 +1,6 @@
+C:\Users\leand\Desktop\APU-E\Kwik-E-Mart (Version Final)\ExcepcionesGeneradas\bin\Debug\ExcepcionesGeneradas.dll
+C:\Users\leand\Desktop\APU-E\Kwik-E-Mart (Version Final)\ExcepcionesGeneradas\bin\Debug\ExcepcionesGeneradas.pdb
+C:\Users\leand\Desktop\APU-E\Kwik-E-Mart (Version Final)\ExcepcionesGeneradas\obj\Debug\ExcepcionesGeneradas.csprojAssemblyReference.cache
+C:\Users\leand\Desktop\APU-E\Kwik-E-Mart (Version Final)\ExcepcionesGeneradas\obj\Debug\ExcepcionesGeneradas.csproj.CoreCompileInputs.cache
+C:\Users\leand\Desktop\APU-E\Kwik-E-Mart (Version Final)\ExcepcionesGeneradas\obj\Debug\ExcepcionesGeneradas.dll
+C:\Users\leand\Desktop\APU-E\Kwik-E-Mart (Version Final)\ExcepcionesGeneradas\obj\Debug\ExcepcionesGeneradas.pdb

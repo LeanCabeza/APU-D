@@ -50,6 +50,7 @@
             this.pb_dona = new System.Windows.Forms.PictureBox();
             this.pb_banner = new System.Windows.Forms.PictureBox();
             this.lbl_Descuento = new System.Windows.Forms.Label();
+            this.label_dolares = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pb_dona)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_banner)).BeginInit();
             this.SuspendLayout();
@@ -260,12 +261,22 @@
             this.lbl_Descuento.Size = new System.Drawing.Size(0, 15);
             this.lbl_Descuento.TabIndex = 101;
             // 
+            // label_dolares
+            // 
+            this.label_dolares.AutoSize = true;
+            this.label_dolares.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_dolares.Location = new System.Drawing.Point(658, 621);
+            this.label_dolares.Name = "label_dolares";
+            this.label_dolares.Size = new System.Drawing.Size(0, 19);
+            this.label_dolares.TabIndex = 102;
+            // 
             // Form_Compra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.PeachPuff;
             this.ClientSize = new System.Drawing.Size(1029, 697);
+            this.Controls.Add(this.label_dolares);
             this.Controls.Add(this.lbl_Descuento);
             this.Controls.Add(this.pb_dona);
             this.Controls.Add(this.pb_banner);
@@ -318,5 +329,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pb_dona;
         private System.Windows.Forms.Label lbl_Descuento;
+        private System.Windows.Forms.Label label_dolares;
     }
 }
